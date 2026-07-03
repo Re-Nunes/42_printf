@@ -1,6 +1,26 @@
-static int ft_findspecifier(va_list args, char *c)
-{
+#include "ft_printf.h"
 
+static int ft_find_specifier(va_list args, char spec)
+{
+	int len;
+
+	len = 0;
+	if (spec == 'c')
+		len = ft_print_char(args);
+	else if (spec == 's')
+		len = 
+	else if (spec == 'p')
+		len = 
+	else if (spec == 'd' || spec == 'i')
+		len = 
+	else if (spec == 'u')
+		len = 
+	else if (spec == 'x')
+		len = 
+	else if (spec == 'X')
+		len = 
+	else if (spec == '%')
+		len = ft_print_char('%');
 }
 
 int	ft_printf(const char *format, ...)
@@ -11,19 +31,22 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
+	if (!format)
+		return(-1);
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
-			len += ft_findspecifier(args, format[i])
+			len += ft_find_specifier(args, format[i]);
 		}
 		else
 		{
-			ft_putchar_fd(format[i], 1)
+			ft_putchar_fd(format[i], 1);
 			len ++;
 		}
+		i++;
 	}
 	va_end(args);
 	return(len);
