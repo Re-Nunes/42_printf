@@ -6,9 +6,9 @@ static int ft_find_specifier(va_list args, char spec)
 
 	len = 0;
 	if (spec == 'c')
-		len = ft_print_char(args);
+		len = ft_putchar(va_arg(args, int));
 	else if (spec == 's')
-		len = 
+		len = ft_putstr(va_arg(args, char *));
 	else if (spec == 'p')
 		len = 
 	else if (spec == 'd' || spec == 'i')
@@ -20,7 +20,8 @@ static int ft_find_specifier(va_list args, char spec)
 	else if (spec == 'X')
 		len = 
 	else if (spec == '%')
-		len = ft_print_char('%');
+		len = ft_putchar('%');
+	return(len);
 }
 
 int	ft_printf(const char *format, ...)
@@ -43,7 +44,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar_fd(format[i], 1);
+			ft_putchar(format[i]);
 			len ++;
 		}
 		i++;

@@ -4,8 +4,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-int		ft_printf(const char *format, ...);
-void	ft_putchar_fd(char c, int fd);
-int		ft_printchar(va_list args);
+int	ft_printf(const char *format, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
 
 #endif
