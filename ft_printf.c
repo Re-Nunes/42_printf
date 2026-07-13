@@ -2,26 +2,24 @@
 
 static int ft_find_specifier(va_list args, char spec)
 {
-	int len;
-
-	len = 0;
 	if (spec == 'c')
-		len = ft_putchar(va_arg(args, int));
+		return (ft_putchar(va_arg(args, int)));
 	else if (spec == 's')
-		len = ft_putstr(va_arg(args, char *));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (spec == 'p')
-		len = 
+		return (ft_putptr(va_arg(args, void *)));
 	else if (spec == 'd' || spec == 'i')
-		len = 
+		return (ft_putnbr(va_arg(args, int)));
 	else if (spec == 'u')
-		len = 
+		return (ft_putnbr(va_arg(args, unsigned int)));
 	else if (spec == 'x')
-		len = 
+		return (ft_puthex(va_arg(args, unsigned int), 0));
 	else if (spec == 'X')
-		len = 
+		 return (ft_puthex(va_arg(args, unsigned int), 1));
 	else if (spec == '%')
-		len = ft_putchar('%');
-	return(len);
+		return (ft_putchar('%'));
+	else
+		return (0);
 }
 
 int	ft_printf(const char *format, ...)
