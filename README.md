@@ -60,7 +60,7 @@ cc main.c -L. -lftprintf -o meu_programa
 
 ### Estruturas de Dados
 
-Dadas as restrições explícitas do projeto em especial a proibição do uso de gerenciamento de buffer do printf original—não houve a necessidade de empregar estruturas de dados dinâmicas ou complexas (como listas encadeadas ou arrays dinâmicos). A função opera iterando sobre a string base caractere por caractere, mantendo uma complexidade de espaço auxiliar de O(1) (desconsiderando a pilha de chamadas para funções recursivas).
+Dadas as restrições explícitas do projeto em especial a proibição do uso de gerenciamento de buffer do printf original não houve a necessidade de empregar estruturas de dados dinâmicas ou complexas (como listas encadeadas ou arrays dinâmicos). A função opera iterando sobre a string base caractere por caractere, mantendo o uso de memória extremamente baixo e otimizado, já que as saídas são enviadas diretamente para o descritor de arquivo da saída padrão.
 
 ### Algoritmo e Fluxo de Execução
 
