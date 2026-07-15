@@ -48,7 +48,7 @@ Após a execução correta, o arquivo de biblioteca estática libftprintf.a ser�
 
 Para integrar a sua biblioteca ft_printf em outros projetos de C da 42, você deve incluir o arquivo de cabeçalho e lincar a biblioteca estática ao compilar seu programa:
 
-1. Inclua o cabeçalho no seu arquivo .c:
+1. Inclua o cabeçalho no seu arquivo.c:
 #include "ft_printf.h"
 
 2. Compile o seu programa referenciando o caminho da biblioteca:
@@ -60,7 +60,7 @@ cc main.c -L. -lftprintf -o meu_programa
 
 ### Estruturas de Dados
 
-Dadas as restrições explícitas do projeto—em especial a proibição do uso de gerenciamento de buffer do printf original—não houve a necessidade de empregar estruturas de dados dinâmicas ou complexas (como listas encadeadas ou arrays dinâmicos). A função opera iterando sobre a string base caractere por caractere, mantendo uma complexidade de espaço auxiliar de O(1) (desconsiderando a pilha de chamadas para funções recursivas).
+Dadas as restrições explícitas do projeto em especial a proibição do uso de gerenciamento de buffer do printf original—não houve a necessidade de empregar estruturas de dados dinâmicas ou complexas (como listas encadeadas ou arrays dinâmicos). A função opera iterando sobre a string base caractere por caractere, mantendo uma complexidade de espaço auxiliar de O(1) (desconsiderando a pilha de chamadas para funções recursivas).
 
 ### Algoritmo e Fluxo de Execução
 
